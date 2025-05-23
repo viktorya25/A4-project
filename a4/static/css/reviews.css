@@ -1,0 +1,206 @@
+/* Основные стили для страницы */
+.content_home_page {
+  display: flex;
+  flex-direction: column;
+  padding: 124px 0px 74px 0px;
+  height: 100%;
+  font-family: Jura;
+  background-color: black; /* Добавим фон для контраста */
+  color: white; /* Белый текст для контраста */
+}
+
+.title_home_page {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 29px;
+  background-color: #5A1010F7;
+  padding: 20px 0;
+}
+
+.submit {
+  width: 258px;
+  height: 69px;
+  background-color: rgba(90, 16, 16, 0.97);
+  font-size: 20px;
+  font-family: Jura;
+  color: white;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.submit:hover {
+  background-color: rgba(120, 30, 30, 0.97);
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  background-color: rgba(217, 217, 217, 1);
+  margin: 10% auto;
+  padding: 0;
+  border: 1px solid white;
+  width: 636px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+}
+
+/* Анимация появления модального окна */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* Стили для кнопки закрытия модального окна */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+/* Стили для формы отзыва */
+.review_form {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(217, 217, 217, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 90px 90px 100px 90px;
+  font-family: Jura;
+}
+
+.review_title_form {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 88px;
+  color: #d4a373;
+}
+
+.review_title_form span {
+  color: rgba(90, 16, 16, 0.97);
+}
+
+.review_input {
+  border: none;
+  background-color: rgba(217, 217, 217, 1);
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  outline: none;
+  font-size: 20px;
+  width: 100%;
+}
+
+.review_input::placeholder {
+  font-family: Jura;
+  color: black;
+  opacity: .3;
+}
+
+.review_form button {
+  width: 258px;
+  height: 69px;
+  background-color: rgba(90, 16, 16, 0.97);
+  color: white;
+  font-size: 20px;
+  font-family: Jura;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.review_form button:hover {
+  background-color: rgba(120, 30, 30, 0.97);
+}
+
+/* Стили для списка отзывов */
+.reviews-list {
+  margin-top: 40px;
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.review-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.review-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #5A1010F7;
+  flex-shrink: 0;
+}
+
+.review-content {
+  flex: 1;
+  min-width: 0; /* Это важно для правильного переноса текста */
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-author {
+  font-size: 24px;
+  color: #5A1010F7;
+  margin: 0;
+  font-weight: bold;
+}
+
+.review-text {
+  font-size: 18px;
+  color: #5A1010F7;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+}
+
+.review-date {
+  font-size: 14px;
+  color: #777;
+}

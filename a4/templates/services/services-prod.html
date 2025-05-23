@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Услуги | Производство{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+  <div class="main-content">
+    <h1 class="title">Услуги</h1>
+    <img src="{% static 'imgs/Group 11.jpg' %}" alt="" class="line-img">
+    <div class="filters">
+      <a href="{% url 'services_brand' %}" class="service-title">Брендинг</a>
+      <a href="{% url 'services_prod' %}" class="service-title">Производство</a>
+      <a href="{% url 'services_install' %}" class="service-title">Установка</a>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="cards-content">
+      <!-- Карточка для "Изготовление вывесок" -->
+      <div class="card">
+        <img src="{% static 'imgs/4.png' %}" class="card-img">
+        <p class="card-title">Изготовление вывесок</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Динамические вывески от 30 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Вывески с QR-кодами от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">3D-вывески от 20 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка для "Материалы для торговых точек" -->
+      <div class="card">
+        <img src="{% static 'imgs/5.png' %}" alt="" class="card-img">
+        <p class="card-title">Материалы для торговых точек</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Изготовление витрин от 10 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Производство буклетов от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Печатные услуги от 12 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка для "Навигационные системы" -->
+      <div class="card">
+        <img src="{% static 'imgs/6.png' %}" alt="" class="card-img">
+        <p class="card-title">Навигационные системы</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Вывески на нескольких языках от 30 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Баннеры и указатели от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Сенсорные экраны от 20 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="openModalWindow" class="submit-application">Подать заявку</button>
+</main>
+
+<!-- Модальное окно -->
+<div id="ModalWindow" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+      <form id="applicationForm" class="application_form" method="post" action="{% url 'services_prod' %}">
+        {% csrf_token %}
+        <p class="application_title_form">
+          <b>Оставьте заявку на услугу!</b>
+        </p>
+
+        <label for="service">Услуга:</label>
+        <select id="service" name="service" class="form-control" required>
+          <option value="">Выберите услугу</option>
+          <option value="Динамические вывески">Динамические вывески</option>
+          <option value="Вывески с QR-кодами">Вывески с QR-кодами</option>
+          <option value="3D-вывески">3D-вывески</option>
+          <option value="Изготовление витрин">Изготовление витрин</option>
+          <option value="Производство буклетов">Производство буклетов</option>
+          <option value="Печатные услуги">Печатные услуги</option>
+          <option value="Вывески на нескольких языках">Вывески на нескольких языках</option>
+          <option value="Баннеры и указатели">Баннеры и указатели</option>
+          <option value="Сенсорные экраны">Сенсорные экраны</option>
+        </select>
+        <textarea id="applicationText" name="description" class="application_input" placeholder="Опишите ваш заказ"></textarea>
+
+        {% if user.is_authenticated %}
+          <button type="submit" class="auth-button">Отправить заявку</button>
+        {% else %}
+          <p class="auth-message">Чтобы оставить заявку, <a href="{% url 'login' %}">авторизуйтесь</a>.</p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/openModal.js' %}"></script>
+{% endblock %}

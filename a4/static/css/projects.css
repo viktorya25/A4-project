@@ -1,0 +1,367 @@
+.content_home_page {
+    display: flex;
+    flex-direction: column;
+
+    padding: 124px 150px 0px 150px;
+    /* height: 100vh; */
+    font-family: Jura;
+}
+
+.title_home_page {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 29px;
+}
+
+.content_home_page img {
+    height: 1px;
+}
+
+/* ************************************* */
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+    display: flex;
+}
+
+.slider {
+    position: relative;
+    width: 735px;
+    margin-left: 593px;
+    margin-right: 592px;
+    margin-top: 145px;
+    margin-bottom: 132px;
+}
+
+/* стилизация кнопки */
+.slider .slick-arrow {
+    position: absolute;
+    top: 45%;
+    margin: 0 -200px;
+    z-index: 10;
+    font-size: 0;
+    width: 50px;
+    height: 60px;
+}
+
+.slider .slick-arrow.slick-next {
+    right: 0;
+    /* Кнопка "вперед" должна быть справа */
+    background: url('../imgs/Polygon_2.svg') 0 0 / 100% no-repeat;
+    border: none;
+}
+
+.slider .slick-arrow.slick-prev {
+    left: 0;
+    /* Кнопка "назад" должна быть слева */
+    background: url('../imgs/Polygon_1.svg') 0 0 / 100% no-repeat;
+    border: none;
+}
+
+.slider .slick-arrow.slick-prev,
+.slick-arrow.slick-next:hover {
+    cursor: pointer;
+}
+
+.slider_item img {
+    cursor: pointer;
+}
+
+.services_page {
+    background-color: black;
+    font-family: Jura;
+    padding-bottom: 158px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.what-if-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5A1010F7;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.what-if-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 105px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 385px;
+    margin-top: 90px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffffff;
+}
+
+.what-if-description {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+    width: 1570px;
+}
+
+.what-if-example {
+    font-style: italic;
+    background-color: #2a2a2a;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    margin: 25px 0;
+    color: #eee;
+    border-radius: 0 8px 8px 0;
+}
+
+.result-section {
+    margin-top: 35px;
+    width: 1570px;
+}
+
+.result-label {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: block;
+    color: white;
+}
+
+.image-grid {
+    display: flex;
+    gap: 280px;
+    margin-top: 57px;
+    margin-bottom: 92px;
+}
+
+.image-placeholder img {
+    width: 552px;
+    height: 552px;
+    object-fit: cover;
+}
+
+.free-to-try {
+    height: 235px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.free-to-try-text {
+    font-size: 36px;
+    font-weight: 700;
+    width: 570px;
+    color: #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+.image-generator-block {
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 174px;
+    height: 885px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+.image-generator-block h3 {
+    margin-top: 37px;
+    margin-bottom: 32px;
+    color: rgba(90, 16, 16, 1);
+    font-size: 25px;
+    text-align: center;
+}
+
+.description-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 435px;
+    height: 735px;
+    border: 4px solid rgba(90, 16, 16, 1);
+}
+
+.idea-description {
+    width: 380px;
+    height: 186px;
+    padding: 22px;
+    background-color: rgba(90, 16, 16, 1);
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.idea-description::placeholder {
+    color: #FFFFFF;
+}
+
+.aspect-ratio-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratio-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ratio-btn-bg {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(90, 16, 16, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratio-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.ratio-btn.active {
+    background-color: rgba(90, 16, 16, 1);
+    color: white;
+}
+
+.ratio-btn:hover {
+    background-color: rgba(90, 16, 16, 1);
+
+}
+
+.ratio-btn.active:hover {
+    background-color: #d0d0d0;
+}
+
+.stop-generation-btn {
+    padding: 10px 20px;
+    background-color: #ff4a4a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background-color 0.2s;
+}
+
+.image-generate-btn {
+    width: 130px;
+    height: 32px;
+    background-color: rgba(90, 16, 16, 1);
+    color: #FFFFFF;
+    border: none;
+}
+
+.image-generate-btn:hover {
+    background-color: rgba(90, 16, 16, 0.8);
+}
+
+.results-placeholder {
+    background-color: white;
+    border: 4px solid rgba(90, 16, 16, 1);
+    padding: 37px 31px;
+    color: rgba(90, 16, 16, 0.5);
+    width: 1120px;
+    height: 735px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.generated-images {
+    width: 100%;
+}
+
+/* Стили для сгенерированных изображений (будут добавляться динамически) */
+.generated-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.generated-image-container {
+    position: relative;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.generated-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.download-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: rgba(90, 16, 16, 0.5);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: rgba(90, 16, 16, 1);
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
+
+.error-message {
+    text-align: center;
+    padding: 20px;
+    color: #f44336;
+    background-color: #ffebee;
+    border-radius: 4px;
+    margin: 20px;
+}
+
+.error-message button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

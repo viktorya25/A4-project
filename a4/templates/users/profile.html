@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <div class="main-content">
+        <h1 class="title">Личный кабинет</h1>
+        <img src="{% static 'imgs/Group 11.jpg' %}" alt="" class="line-img">
+    </div>
+
+    <div class="profile-section">
+        <div class="profile-content">
+            <div class="left-content">
+                <div class="upload-container">
+                    <input id="file-upload" type="file" name="avatar" class="upload-input" accept="image/*">
+                    <img id="preview" class="preview-image"
+                    src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'imgs/default-avatar.jpg' %}{% endif %}"
+                    alt="Превью фото">
+                    {% csrf_token %}
+                    <label for="file-upload" class="upload-btn">Загрузить фото</label>
+                </div>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="logout">Выйти из профиля</button>
+                </form>
+            </div>
+            <div class="right-content">
+                <div class="user-info"><p>{{ user.last_name }}</p></div>
+                <div class="user-info"><p>{{ user.first_name }}</p></div>
+                <div class="user-info"><p>{{ user.username }}</p></div>
+                <div class="user-info"><p>{{ user.email }}</p></div>
+                <a href="{% url 'password_change' %}" class="change-pass">Сменить пароль</a>
+            </div>
+        </div>
+
+        <div class="orders-list">
+            <h1 class="title">Ваши заказы</h1>
+            {% if orders %}
+                {% for order in orders %}
+                <div class="order-item">
+                    <div class="order-info">
+                        <div>
+                            <p class="info-title">Услуга</p>
+                            <p class="info-text">{{ order.service }}</p>
+                        </div>
+                        <div>
+                            <p class="info-title">Дата начала</p>
+                            <p class="info-text">{{ order.created_at|date:"d/m/Y" }}</p>
+                        </div>
+                        <div>
+                            <p class="info-title">Стоимость</p>
+                            <p class="info-text">{{ order.price|default:"-" }} руб.</p>
+                        </div>
+                        <div>
+                            <p class="info-title">Статус</p>
+                            <p class="info-text">{{ order.get_status_display }}</p>
+                        </div>
+                        <div>
+                            <p class="info-title">Дата завершения</p>
+                            <p class="info-text">{{ order.completion_date|date:"d/m/Y"|default:"-" }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-orders-message">
+                    <p>В данный момент у вас нет заказов</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{% static 'js/uploadPhoto.js' %}"></script>
+</main>
+{% endblock %}

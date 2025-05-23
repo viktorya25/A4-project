@@ -1,0 +1,216 @@
+.main {
+    width: 100%;
+    height: 1450px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    margin-top: 125px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.title {
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.line-img {
+    margin-top: 29px;
+}
+
+.filters {
+    width: 700px;
+    display: flex;
+    gap: 49px;
+    margin-top: 95px;
+}
+
+.service-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 36px 14px 36px;
+    background-color: #5A1010F7;
+}
+
+.service-title:hover {
+    margin: -1px;
+    border: 1px solid white;
+}
+
+.cards {
+    width: 1610px;
+    height: 815px;
+    background-color: white;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 65px;
+}
+
+.cards-content {
+    display: flex;
+    gap: 115px;
+}
+
+.card {
+    width: 369px;
+    height: 575px;
+    border: 3px solid #5A1010F7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-img {
+    border: 3px solid #5A1010F7;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #5A1010F7;
+    margin-top: 38px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 65px;
+    gap: 30px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item-line {
+    height: 1px;
+    width: 205px;
+    background-color: #5A1010F7;
+}
+
+.submit-application {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 32px 26px 32px;
+    background-color: #5A1010F7;
+}
+
+.submit-application:hover {
+    margin: -1px;
+    border: 1px solid white;
+}
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff6b6b;
+}
+
+/* Стили для формы в модальном окне */
+.application_form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.application_title_form {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-left: 18%;
+}
+
+.application_input {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+.auth-button {
+    width: 200px;
+    height: 50px;
+    background-color: #5A1010F7;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 30%;
+}
+
+.auth-button:hover {
+    background-color: #7a2020;
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.auth-message {
+    margin-left: 20%;
+}

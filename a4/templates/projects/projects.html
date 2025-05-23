@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Наши проекты{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content_home_page">
+    <p class="title_home_page">Проекты</p>
+    <img src="{% static 'imgs/Group 11.jpg' %}" alt="" />
+</div>
+
+<div class="slider">
+    <img src="{% static 'imgs/Group 37.jpg' %}" alt="" />
+    <img src="{% static 'imgs/Group 38.jpg' %}" alt="" />
+    <img src="{% static 'imgs/Group 40.jpg' %}" alt="" />
+    <img src="{% static 'imgs/Group 41.jpg' %}" alt="" />
+</div>
+
+
+<div class="what-if-block">
+    <div class="what-if-title">ЧТО ЕСЛИ?</div>
+    
+    <div class="what-if-description">
+        В разделе “Что если” представлена возможность для пользователей и будущих клиентов при помощи искусственного интеллекта увидеть, как могла бы выглядеть их реклама в различных стилях. Для этого Вам нужно ввести в поле ввода интерисущий запрос.<br>
+		<br>
+		Например: "Что если сделать мою рекламу в красных оттенках?"- ИИ выдаст Вам идеи в этом стиле, и вы сможете заказать рекламу в данном стиле и данной тематике
+    </div>
+    <div class="result-section">
+        <span class="result-label">Результат:</span>
+        <div class="image-grid">
+            <div class="image-placeholder">
+                <img src="{% static 'imgs/example_1.png' %}" alt="Пример рекламы 1">
+            </div>
+            <div class="image-placeholder">
+                <img src="{% static 'imgs/example_2.png' %}" alt="Пример рекламы 2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="free-to-try">
+	<div class="free-to-try-text">Попробуйте бесплатно</div>
+</div>
+
+<div class="image-generator-block">
+  <div class="description-section">
+    <h3>Описание</h3>
+    <textarea class="idea-description" placeholder="Описание вашей идеи..."></textarea>
+	<div class="aspect-ratio-section">
+		<h3>Соотношение сторон</h3>
+		<div class="ratio-buttons">
+			<div class="ratio-btn-bg">
+				<button class="ratio-btn active" style="width: 25px; height: 25px;">1:1</button>
+			</div>
+			<div class="ratio-btn-bg">
+				<button class="ratio-btn active" style="width: 25px; height: 35px;">3:4</button>
+			</div>
+			<div class="ratio-btn-bg">
+				<button class="ratio-btn active" style="width: 35px; height: 25px;">4:3</button>
+			</div>
+			<div class="ratio-btn-bg">
+				<button class="ratio-btn active" style="width: 35px; height: 20px;">10:9</button>
+			</div>
+			<div class="ratio-btn-bg">
+				<button class="ratio-btn active" style="width: 20px; height: 35px;">8:10</button>
+			</div>
+		</div>
+		<button class="image-generate-btn">Сгенерировать</button>
+  	</div>
+  </div>
+
+  <div class="results-section">
+    <div class="results-placeholder">
+      <p>Здесь появятся изображения, которые будут сгенерированы ИИ</p>
+    </div>
+    <div class="generated-images"></div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="{% static 'js/slider.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/image-generation.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Услуги | Брендинг{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+  <div class="main-content">
+    <h1 class="title">Услуги</h1>
+    <img src="{% static 'imgs/Group 11.jpg' %}" alt="" class="line-img">
+    <div class="filters">
+      <a href="{% url 'services_brand' %}" class="service-title">Брендинг</a>
+      <a href="{% url 'services_prod' %}" class="service-title">Производство</a>
+      <a href="{% url 'services_install' %}" class="service-title">Установка</a>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="cards-content">
+      <!-- Карточка для "Разработка фирменного стиля" -->
+      <div class="card">
+        <img src="{% static 'imgs/1.png' %}" class="card-img">
+        <p class="card-title">Разработка фирменного стиля</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Создание логотипов от 30 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Подбор цветовых палитр от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Брендирование мероприятий от 20 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка для "Маркетинговые исследования" -->
+      <div class="card">
+        <img src="{% static 'imgs/2.png' %}" alt="" class="card-img">
+        <p class="card-title">Маркетинговые исследования</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Анализ конкурентов бренда от 10 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Анализ целевой аудитории от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Анализ тенденций рынка от 12 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка для "Разработка кампаний" -->
+      <div class="card">
+        <img src="{% static 'imgs/3.png' %}" alt="" class="card-img">
+        <p class="card-title">Разработка кампаний</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Создание рекламных стратегий от 30 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Консультации по брендингу от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Разработка слоганов от 20 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="openModalWindow" class="submit-application">Подать заявку</button>
+</main>
+
+<!-- Модальное окно -->
+<div id="ModalWindow" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+      <form id="applicationForm" class="application_form" method="post" action="{% url 'services_brand' %}">
+        {% csrf_token %}
+        <p class="application_title_form">
+          <b>Оставьте заявку на услугу!</b>
+        </p>
+
+        <label for="service">Услуга:</label>
+        <select id="service" name="service" class="form-control" required>
+          <option value="">Выберите услугу</option>
+          <option value="Создание логотипа">Создание логотипа</option>
+          <option value="Подбор цветовых палитр">Подбор цветовых палитр</option>
+          <option value="Брендирование мероприятий">Брендирование мероприятий</option>
+          <option value="Анализ конкурентов бренда">Анализ конкурентов бренда</option>
+          <option value="Анализ целевой аудитории">Анализ целевой аудитории</option>
+          <option value="Анализ тенденций рынка">Анализ тенденций рынка</option>
+          <option value="Создание рекламных стратегий">Создание рекламных стратегий</option>
+          <option value="Консультации по брендингу">Консультации по брендингу</option>
+          <option value="Разработка слоганов">Разработка слоганов</option>
+        </select>
+        <textarea id="applicationText" name="description" class="application_input" placeholder="Опишите ваш заказ"></textarea>
+
+        {% if user.is_authenticated %}
+          <button type="submit" class="auth-button">Отправить заявку</button>
+        {% else %}
+          <p class="auth-message">Чтобы оставить заявку, <a href="{% url 'login' %}">авторизуйтесь</a>.</p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/openModal.js' %}"></script>
+{% endblock %}

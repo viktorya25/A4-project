@@ -1,0 +1,23 @@
+{% load static %}
+<header>
+	<a href="{% url 'home' %}">
+		<div class="logo">
+			<img src="{% static 'imgs/Group 41.svg' %}" alt="" />
+			<p class="text_logo">Рекламная<br />компания А4</p>
+		</div>
+	</a>
+	<div class="menu">
+		<a href="{% url 'projects' %}">проекты</a>
+		<a href="{% url 'services_brand' %}">услуги</a>
+		<a href="{% url 'packages' %}">пакеты</a>
+		<a href="{% url 'reviews' %}">отзывы</a>
+		<a href="{% url 'home' %}#contact">контакты</a>
+		<img src="{% static 'imgs/user-logo.svg' %}" alt="user-logo" class="user-logo">
+
+		{% if user.is_authenticated %}
+			<a href="{% url 'profile' %}" id="login-link">{{ user.username }}</a>
+		{% else %}
+			<a href="{% url 'login' %}" id="login-link">Войти</a>
+		{% endif %}
+	</div>
+</header>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оплата заказа на {{ order.service }}</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .order-details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Здравствуйте, {{ order.user.username }}!</h2>
+    
+    <p>Ваш заказ на услугу <strong>{{ order.service }}</strong> ожидает оплаты.</p>
+    
+    <div class="order-details">
+        <p><strong>Сумма к оплате:</strong> {{ order.price }} руб.</p>
+        {% if order.description %}
+        <p><strong>Описание:</strong><br>{{ order.description }}</p>
+        {% endif %}
+    </div>
+    
+    <p>Для оплаты нажмите на кнопку:</p>
+    <a href="{{ payment_url }}" class="button">Оплатить заказ</a>
+    
+    <p>Если кнопка не работает, скопируйте эту ссылку в браузер:<br>
+    <small>{{ payment_url }}</small></p>
+    
+    <p>С уважением,<br>Команда вашего сервиса</p>
+</body>
+</html>

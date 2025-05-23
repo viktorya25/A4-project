@@ -1,0 +1,60 @@
+# Игнорируем системные и IDE файлы
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Игнорируем виртуальное окружение
+venv/
+env/
+.venv/
+
+# Игнорируем кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Игнорируем статические файлы (если они собираются при сборке)
+/static_collected/
+
+# Игнорируем файлы базы данных
+*.sqlite3
+*.db
+
+# Игнорируем логи
+*.log
+*.pot
+
+# Игнорируем тестовые и отладочные файлы
+tests/
+test/
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Игнорируем конфигурационные файлы (если не нужны в контейнере)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+secrets.json
+
+# Игнорируем файлы документации
+docs/_build/
+
+# Игнорируем медиа файлы (если они не нужны в образе)
+/media/
+
+# Игнорируем файлы сборки и дистрибуции
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Игнорируем файлы операционной системы
+Thumbs.db
+ehthumbs.db
+Desktop.ini

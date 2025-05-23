@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Пакеты услуг{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/packages.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="content_home_page">
+  <p class="title_home_page">Пакеты</p>
+  <img src="{% static 'imgs/Group 11.jpg' %}" alt="" />
+  <div class="blocks_price">
+    <div class="block">
+      <div class="title_price">
+        <p>Тариф <br />“Базовый”</p>
+      </div>
+      <p class="desc_block">- анализ целевой аудитории</p>
+      <p class="desc_block">- создание 1 рекламного объявления</p>
+      <p class="desc_block">- настройка и запуск рекламной кампании в одной социальной сети</p>
+      <p class="desc_block">- ежемесячный отчет о результатах</p>
+      <form method="post" action="{% url 'packages' %}">
+        {% csrf_token %}
+        <input type="hidden" name="service" value="Тариф 'Базовый'">
+        <input type="hidden" name="price" value="10000">
+        <button type="submit"><b>10 тычяч/мес</b></button>
+      </form>
+    </div>
+    <div class="block">
+      <div class="title_price">
+        <p>Тариф<br />“Стандартный”</p>
+      </div>
+      <p class="desc_block">- все услуги Базового тарифа</p>
+      <p class="desc_block">- создание до 3 рекламных объявлений</p>
+      <p class="desc_block">- настройка и запуск кампании в двух социальных сетях</p>
+      <p class="desc_block">- оптимизация кампаний раз в две недели</p>
+      <p class="desc_block">- поддержка по электронной почте и телефону</p>
+      <form method="post" action="{% url 'packages' %}">
+        {% csrf_token %}
+        <input type="hidden" name="service" value="Тариф 'Стандартный'">
+        <input type="hidden" name="price" value="25000">
+        <button type="submit"><b>25 тычяч/мес</b></button>
+      </form>
+    </div>
+    <div class="block">
+      <div class="title_price">
+        <p>Тариф<br />“Премиум”</p>
+      </div>
+      <p class="desc_block">- все услуги Стандартного тарифа</p>
+      <p class="desc_block">- создание до 5 рекламных объявлений с A/B тестированием</p>
+      <p class="desc_block">- запуск кампании в трех</p>
+      <p class="desc_block">- еженедельная оптимизация и консультации</p>
+      <p class="desc_block">- поддержка через мессенджеры</p>
+      <form method="post" action="{% url 'packages' %}">
+        {% csrf_token %}
+        <input type="hidden" name="service" value="Тариф 'Премиум'">
+        <input type="hidden" name="price" value="35000">
+        <button type="submit"><b>35 тычяч/мес</b></button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

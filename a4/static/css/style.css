@@ -1,0 +1,238 @@
+/* -------------- OTHER -------------- */
+
+button,
+a {
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: Jura;
+    src: url(../font/Jura.ttf);
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url(../font/Orbitron.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Jura;
+}
+
+.wrapper {
+    height: 100%;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.home_page {
+    background-color: black;
+    height: 100%;
+    font-family: Jura;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+
+/* -------------- HEADER -------------- */
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    color: black;
+    height: 100px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+    padding: 0 155px;
+}
+
+header a {
+    font-family: Jura;
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+header a:not(:last-child) {
+    margin-right: 60px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-logo {
+    width: 30px;
+}
+
+
+/* -------------- FOOTER -------------- */
+
+
+footer {
+    font-family: Jura;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 165px;
+    height: 260px;
+    border-radius: 20px 20px 0 0;
+    background-color: white;
+    width: 100%;
+}
+
+footer .logo {
+    font-size: 24px;
+}
+
+.sub_menu {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+}
+
+.line {
+    height: 190px;
+    border: 2px solid rgba(90, 16, 16, 0.97);
+    margin: 0 20px;
+}
+
+.left_menu {
+    text-align: right;
+}
+
+.wrapper {
+    background-color: black;
+}
+
+
+/* -------------- MESSAGES -------------- */
+
+
+.messages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+}
+
+.alert {
+    display: inline-block;
+    padding: 20px 40px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #7a2020;
+    background-color: #ff6b6b;
+    border-color: #7a2020;
+}
+
+.alert-info {
+    color: black;
+    background-color: #ecfd00;
+    border-color: black;
+}
+
+/* Анимация появления */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.messages .alert {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Анимация для плавного исчезновения */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.alert.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.auth-message {
+    font-size: 18px;
+    color: #5A1010F7;
+    text-align: center;
+}
+
+.auth-message a {
+    color: #5A1010F7;
+    text-decoration: underline;
+}
+
+.auth-message a:hover {
+    color: #7a2020;
+}
+
+
+/* -------------- ERRORS -------------- */
+
+
+.errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.form input.error {
+    border: 1px solid #ff6b6b;
+}
+
+.form input.error:focus {
+    border: 1px solid #ff6b6b;
+    box-shadow: 0 0 5px #ff6b6b;
+}

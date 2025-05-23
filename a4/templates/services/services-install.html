@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Услуги | Установка{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+  <div class="main-content">
+    <h1 class="title">Услуги</h1>
+    <img src="{% static 'imgs/Group 11.jpg' %}" alt="" class="line-img">
+    <div class="filters">
+      <a href="{% url 'services_brand' %}" class="service-title">Брендинг</a>
+      <a href="{% url 'services_prod' %}" class="service-title">Производство</a>
+      <a href="{% url 'services_install' %}" class="service-title">Установка</a>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="cards-content">
+      <!-- Карточка для "Демонтаж вывесок/баннеров" -->
+      <div class="card">
+        <img src="{% static 'imgs/7.png' %}" class="card-img">
+        <p class="card-title">Демонтаж вывесок/баннеров</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Оценка состояния от 5 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Консультации по замене от 3 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Удаление крепежных элементов от 10 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка для "Техническое обслуживание" -->
+      <div class="card">
+        <img src="{% static 'imgs/8.png' %}" alt="" class="card-img">
+        <p class="card-title">Техническое обслуживание</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Обновление поверхности от 8 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Замена освещения от 12 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Очистка и уход от 6 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка для "Аварийный ремонт" -->
+      <div class="card">
+        <img src="{% static 'imgs/9.png' %}" alt="" class="card-img">
+        <p class="card-title">Аварийный ремонт</p>
+        <div class="card-info">
+          <div class="item">
+            <p class="item-text">Экстренная замена от 15 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Ремонт после вандализма от 20 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+          <div class="item">
+            <p class="item-text">Страхование рисков от 10 тыс.</p>
+            <div class="item-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="openModalWindow" class="submit-application">Подать заявку</button>
+</main>
+
+<!-- Модальное окно -->
+<div id="ModalWindow" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body">
+      <form id="applicationForm" class="application_form" method="post" action="{% url 'services_install' %}">
+        {% csrf_token %}
+        <p class="application_title_form">
+          <b>Оставьте заявку на услугу!</b>
+        </p>
+
+        <label for="service">Услуга:</label>
+        <select id="service" name="service" class="form-control" required>
+          <option value="">Выберите услугу</option>
+          <option value="Оценка состояния">Оценка состояния</option>
+          <option value="Консультации по замене">Консультации по замене</option>
+          <option value="Удаление крепежных элементов">Удаление крепежных элементов</option>
+          <option value="Обновление поверхности">Обновление поверхности</option>
+          <option value="Замена освещения">Замена освещения</option>
+          <option value="Очистка и уход">Очистка и уход</option>
+          <option value="Экстренная замена">Экстренная замена</option>
+          <option value="Ремонт после вандализма">Ремонт после вандализма</option>
+          <option value="Страхование рисков">Страхование рисков</option>
+        </select>
+        <textarea id="applicationText" name="description" class="application_input" placeholder="Опишите ваш заказ"></textarea>
+
+        {% if user.is_authenticated %}
+          <button type="submit" class="auth-button">Отправить заявку</button>
+        {% else %}
+          <p class="auth-message">Чтобы оставить заявку, <a href="{% url 'login' %}">авторизуйтесь</a>.</p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/openModal.js' %}"></script>
+{% endblock %}
